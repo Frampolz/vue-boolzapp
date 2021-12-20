@@ -1,6 +1,6 @@
 :root {
      --sidebar-width: 400px;
-     --chat-top-bar-height: 70px
+     --chat-top-bar-height: 65px
 }
 
 * {
@@ -11,6 +11,7 @@
 
 html {
     font-size: 100%;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -76,7 +77,8 @@ html {
     color: grey;
 }
 
-.icon-row .fa-comment-alt {
+.icon-row .fa-comment-alt,
+.fa-paperclip {
     padding: 0 1em;
 }
 /* /user row */
@@ -115,7 +117,7 @@ html {
     text-align: center;
     margin-top: 0.5em;
 }
-.fa-search {
+.search-bar i {
     position: absolute;
     left: 25px;
     top: 16px;
@@ -142,7 +144,6 @@ float: right;
     content: '';
 }
 
-
 /* /contact icon */
 
 /* /siderbar */
@@ -154,23 +155,44 @@ float: right;
     flex-direction: column;
     justify-content: space-between;
 }
-
 .chat-top-row,
 .chat-bot-row {
     height: var(--chat-top-bar-height);
 }
 
+/*chat top row */
 .chat-top-row {
     background-color: rgb(234, 234, 234);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.chat-bot-row {
-    background-color: rgb(243, 238, 234);
-}
+/*/chat top row */
 
 .chat-mid-row {
     height: calc(100% - (var(--chat-top-bar-height)*2));
     background-image: url(../img/mine.jpg);
-    background-size:auto
+    background-size:auto;
+}
+
+.chat-bot-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(243, 238, 234);
+}
+
+.chat-bot-row input {
+    width: 90%;
+    padding: 1em;
+    border-radius: 5px;
+    border: none;
+}
+
+.emoji,
+.mic {
+    width: 5%;
+    text-align: center;
 }
 /* /chat */
