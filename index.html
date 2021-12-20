@@ -22,29 +22,42 @@
             <div class="inner-container">
                 <div class="sidebar">
                     <div class="user-row">
-                        <div class="user-icon">
-                            <img src="" alt="">
+                        <div class="profile-icon">
+                            <img src="img/avatar_io.jpg" alt="">
+                            <h3>Nome utente</h3>
                         </div>
-                        <h3>Nome utente</h3>
-                        <p>icon</p>
-                        <p>icon</p>
-                        <p>icon</p>
+                        <div class="icon-row">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
                     </div>
                     <div class="notif-row">
-                        <p>icon</p>
-                        <p>text</p>
-                        <p>text</p>
+                        <div class="icon-circle">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <div class="notif-text">
+                            <h4>Ricevi notifiche di nuovi messaggi</h4>
+                            <p>Attiva notifiche desktop</p>
+                        </div>
                     </div>
                     <div class="search-bar">
-                        <p>icon</p>
-                        <p>input</p>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <i class="fas fa-search"></i>
                     </div>
                     <div class="contact-chat">
                         <ul>
-                            <li>
-                                <img src="" alt="">
-                                <h3>name</h3>
-                                <p>text</p>
+                            <li v-for="(contact, index) in contacts">
+                                <div class="profile-icon">
+                                    <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
+                                    <div class="contact-chat-details">
+                                        <h3>{{ contact.name }}</h3>
+                                        <p>text</p>
+                                    </div>
+                                </div>
+                                <div class="date">
+                                    <p>20 12 2021 10:22:21</p>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -53,7 +66,8 @@
                     <div class="chat-top-row">
                         
                     </div>
-                    <div class="chat-mid-row"></div>
+                    <div class="chat-mid-row">
+                    </div>
                     <div class="chat-bot-row">
                         
                     </div>
