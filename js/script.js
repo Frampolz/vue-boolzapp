@@ -103,6 +103,6 @@ const app = new Vue({
     
   },
    created() {
-     console.log(this.contacts[0].messages.reverse())
+    
   }, 
 });
