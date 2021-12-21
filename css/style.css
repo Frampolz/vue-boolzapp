@@ -16,8 +16,9 @@ html {
 
 .container {
     height: 100vh;
-    background-color: rgb(219, 219, 210);
-    position: relative;
+    background: rgb(0,150,136);
+    background: linear-gradient(180deg, rgba(0,150,136,1) 15%, rgba(220,219,209,1) 15%, rgba(220,219,209,1) 100%);
+    display: flex;
 }
 
 .bg-green-row {
@@ -30,10 +31,8 @@ html {
     width: 80%;
     height: 90vh;
     min-width: 1200px;
-    position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%, -50%);
+    margin: auto;
+
     background-color: white;
     display: flex;
     flex-wrap: wrap;
@@ -44,7 +43,6 @@ html {
     width: var(--sidebar-width);
     height: 100%;
     background-color: rgb(250, 250, 250);
-    overflow-y: hidden;
 }
 /* user row */
 .user-row {
@@ -129,7 +127,8 @@ html {
 /* /search-bar */
 /* contact icon */
 .contact-chat {
-    overflow-y: auto;
+    height: calc(100% - 68px - 84px - 40px);
+    overflow-y: scroll;
 }
 .contact-chat ul {
     list-style-type: none;
@@ -142,21 +141,16 @@ html {
     justify-content: space-between;
     margin-bottom: 5px;
     background-color: white;
+    cursor: pointer;
 }
-.contact-chat-details {
-    float: right;
-    padding: 0.5em;
+.contact-chat-details p {
+    font-size: 0.7em;
 }
 
 .date {
     color: grey;
-    font-size: 0.9em;
-}
-
-.contact-chat-details::after {
-    clear: both;
-    display: table;
-    content: '';
+    font-size: 0.7em;
+    text-align: right;
 }
 
 /* /contact icon */
@@ -181,6 +175,10 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.chat-top-row .contact-chat-details {
+    flex-grow: 1;
 }
 /*/chat top row */
 
@@ -211,8 +209,9 @@ html {
 .chat-mid-row ul li p {
     text-align: right;
 }
-.received {
+.receive {
     background-color: white;
+    align-self: flex-start;
 }
 
 .sent {
