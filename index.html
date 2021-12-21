@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="contact-chat-details">
                                     <h3>{{ contact.name }}</h3>
-                                    <p>{{ contact.messages[1].text }}</p>
+                                    <p>{{ contact.messages[0].text }}</p>
                                 </div>
                                 <div class="date">
                                     <p>20/12/2021 10:22:21</p>
@@ -79,7 +79,7 @@
                     <div class="chat-mid-row">
                         <div class="inner-chat-mid-row">
                             <ul>
-                                <li v-for="(message, index) in contacts[counter].messages" :class="(status == sent) ? 'sent' : 'receive'">
+                                <li v-for="(message, index) in contacts[counter].messages" :class="(message.status == 'sent') ? 'sent' : 'receive'">
                                     <span>{{ message.text }}</span>
                                     <p class="date">{{ message.date }}</p>
                                 </li>

@@ -177,7 +177,7 @@ html {
     align-items: center;
 }
 
-.chat-top-row .contact-chat-details {
+.contact-chat-details {
     flex-grow: 1;
 }
 /*/chat top row */
