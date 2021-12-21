@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="contact-chat-details">
                                     <h3>{{ contact.name }}</h3>
-                                    <p>{{ contact.messages[0].text }}</p>
+                                    <p>{{ contact.messages.slice(-1)[0].text }}</p>
                                 </div>
                                 <div class="date">
                                     <p>20/12/2021 10:22:21</p>
