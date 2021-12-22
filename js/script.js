@@ -10,6 +10,7 @@ Click sul contatto mostra la conversazione del contatto cliccato
 const app = new Vue({
   el: '#app',
   data: {
+    newMessage: "",
     counter: 0,
     contacts: [
      {
@@ -99,10 +100,26 @@ const app = new Vue({
    ],
     
   },
-  methods: {
-    
+  created() {
+    let msgArray = this.contacts[this.counter].messages;
+    console.log(msgArray);
+
   },
-  computed: {
-    
-  }
+
+  methods: {
+    newMessages: function() {
+      
+      let newMsg = {
+        date: "10/01/2020 15:30:55",
+        text: this.newMessage,
+        status: "sent",
+      }
+      let msgArray = this.contacts[this.counter].messages;
+      msgArray.push(newMsg)
+      
+
+
+    }
+  },
+
 });
