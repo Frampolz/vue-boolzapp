@@ -101,21 +101,31 @@ const app = new Vue({
     
   },
   created() {
-    let msgArray = this.contacts[this.counter].messages;
-    console.log(msgArray);
+
 
   },
 
   methods: {
     newMessages: function() {
       
-      let newMsg = {
+      let newMsgSent = {
         date: "10/01/2020 15:30:55",
         text: this.newMessage,
         status: "sent",
       }
+      let newMsgReceived = {
+        date: "10/01/2020 15:30:55",
+        text: "ok",
+        status: "received",
+      }
       let msgArray = this.contacts[this.counter].messages;
-      msgArray.push(newMsg)
+      if(this.newMessage.trim().length != 0) {
+        msgArray.push(newMsgSent);
+        setTimeout(() => {
+          msgArray.push(newMsgReceived);
+        }, 1000);
+
+      }
       
 
 
