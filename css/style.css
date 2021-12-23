@@ -159,10 +159,12 @@ html {
 
 /* chat */
 .chat{
+    height: 100%;
     width: calc(100% - var(--sidebar-width));
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: hidden  ;
 }
 .chat-top-row,
 .chat-bot-row {
@@ -187,6 +189,7 @@ html {
     height: calc(100% - (var(--chat-top-bar-height)*2));
     background-image: url(../img/mine.jpg);
     background-size:auto;
+    overflow-y: scroll;
 }
 .inner-chat-mid-row {
     width: 80%;
