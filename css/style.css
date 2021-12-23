@@ -204,7 +204,23 @@ html {
     padding: 1em;
     border-radius: 10px;
     margin-bottom: 5px;
+    position: relative;
 }
+
+.chat-mid-row ul li i {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+.chat-mid-row ul li ul {
+    
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: wheat;
+    border-radius: 10px;
+}
+
 
 .chat-mid-row ul li p {
     text-align: right;

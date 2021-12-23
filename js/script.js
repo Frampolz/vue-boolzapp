@@ -10,8 +10,12 @@ Click sul contatto mostra la conversazione del contatto cliccato
 const app = new Vue({
   el: '#app',
   data: {
+    
+    toggle: false,
     newMessage: "",
+    search:"",
     counter: 0,
+    
     contacts: [
      {
        name: "Michele",
@@ -101,13 +105,11 @@ const app = new Vue({
     
   },
   created() {
-
-
+     console.log(this.contacts);
   },
 
   methods: {
     newMessages: function() {
-      
       let newMsgSent = {
         date: "10/01/2020 15:30:55",
         text: this.newMessage,
@@ -124,11 +126,18 @@ const app = new Vue({
         setTimeout(() => {
           msgArray.push(newMsgReceived);
         }, 1000);
-
       }
-      
+      this.newMessage="";
+    },
 
-
+    findContacts: function() {
+      this.contacts.forEach((contact) => {
+        if (contact.name.toLowerCase().includes(this.search.toLowerCase())) {
+          contact.visible = true;
+        } else {
+          contact.visible = false;
+        }
+      })
     }
   },
 

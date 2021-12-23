@@ -41,12 +41,12 @@
                         </div>
                     </div>
                     <div class="search-bar">
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="search" @keyup="findContacts()" type="text" placeholder="Cerca o inizia una nuova chat">
                         <i class="fas fa-search"></i>
                     </div>
                     <div class="contact-chat">
                         <ul>
-                            <li v-on:click="counter = index" v-for="(contact, index) in contacts">
+                            <li v-if="contact.visible" v-on:click="counter = index" v-for="(contact, index) in contacts">
                                 <div class="profile-icon">
                                     <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                                 </div>
@@ -81,6 +81,13 @@
                             <ul>
                                 <li v-for="(message, index) in contacts[counter].messages" :class="(message.status == 'sent') ? 'sent' : 'receive'">
                                     <span>{{ message.text }}</span>
+                                    <i @click='toggle = !toggle' class="fas fa-chevron-down">
+
+                                    </i>
+                                    <ul v-show='toggle'>
+                                        <li>message info</li>
+                                        <li>delete message</li>
+                                    </ul>
                                     <p class="date">{{ message.date }}</p>
                                 </li>
                             </ul>
@@ -103,3 +110,9 @@
 </body>
 
 </html>
+
+<!-- position: absolute;
+top: 42px;
+right: 0;
+background-color: wheat;
+border-radius: 10px; -->
