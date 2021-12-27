@@ -41,12 +41,18 @@
                         </div>
                     </div>
                     <div class="search-bar">
-                        <input v-model="search" @keyup="findContacts()" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input 
+                        v-model="search" 
+                        @keyup="findContacts()" type="text"
+                        placeholder="Cerca o inizia una nuova chat">
                         <i class="fas fa-search"></i>
                     </div>
                     <div class="contact-chat">
                         <ul>
-                            <li v-if="contact.visible" v-on:click="counter = index" v-for="(contact, index) in contacts">
+                            <li 
+                            v-if="contact.visible" 
+                            v-on:click="counter = index" 
+                            v-for="(contact, index) in contacts">
                                 <div class="profile-icon">
                                     <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                                 </div>
@@ -55,7 +61,7 @@
                                     <p>{{ contact.messages.slice(-1)[0].text }}</p>
                                 </div>
                                 <div class="date">
-                                    <p>20/12/2021 10:22:21</p>
+                                    <p>{{contact.messages.slice(-1)[0].date}}</p>
                                 </div>
                             </li>
                         </ul>
@@ -79,14 +85,17 @@
                     <div class="chat-mid-row">
                         <div class="inner-chat-mid-row">
                             <ul>
-                                <li v-for="(message, index) in contacts[counter].messages" :class="(message.status == 'sent') ? 'sent' : 'receive'">
+                                <li 
+                                v-for="(message, index) in contacts[counter].messages" 
+                                :class="(message.status == 'sent') ? 'sent' : 'receive'">
                                     <span>{{ message.text }}</span>
-                                    <i @click='toggle = !toggle' class="fas fa-chevron-down">
-
+                                    <i 
+                                    @click="dropdown(index)" 
+                                    class="fas fa-chevron-down">
                                     </i>
                                     <ul v-show='toggle'>
                                         <li>message info</li>
-                                        <li>delete message</li>
+                                        <li @click="deleteMsg(index)">delete message</li>
                                     </ul>
                                     <p class="date">{{ message.date }}</p>
                                 </li>
@@ -100,6 +109,7 @@
                         <input @keyup.enter="newMessages()" v-model="newMessage" type="text" placeholder="Scrivi un messaggio">
                         <div class="mic">
                             <i class="fas fa-microphone"></i>
+                            <i class="fab fa-telegram-plane"></i>
                         </div>
                     </div>
                 </div>
@@ -110,9 +120,3 @@
 </body>
 
 </html>
-
-<!-- position: absolute;
-top: 42px;
-right: 0;
-background-color: wheat;
-border-radius: 10px; -->

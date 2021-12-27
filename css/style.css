@@ -191,11 +191,13 @@ html {
     background-size:auto;
     overflow-y: scroll;
 }
+
 .inner-chat-mid-row {
     width: 80%;
     margin: 0 auto;
     margin-top: 2em;
 }
+
 .chat-mid-row ul {
     list-style-type: none;
     display: flex;
@@ -215,6 +217,7 @@ html {
     top: 1em;
     right: 1em;
 }
+
 .chat-mid-row ul li ul {
     
     position: absolute;
@@ -224,10 +227,10 @@ html {
     border-radius: 10px;
 }
 
-
 .chat-mid-row ul li p {
     text-align: right;
 }
+
 .receive {
     background-color: white;
     align-self: flex-start;
@@ -257,5 +260,9 @@ html {
 .mic {
     width: 5%;
     text-align: center;
+}
+
+.mic i:last-child {
+    display: none;
 }
 /* /chat */

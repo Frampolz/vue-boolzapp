@@ -105,7 +105,9 @@ const app = new Vue({
     
   },
   created() {
-     console.log(this.contacts);
+    console.log(this.contacts[this.counter].messages);
+  
+    
   },
 
   methods: {
@@ -129,7 +131,9 @@ const app = new Vue({
       }
       this.newMessage="";
     },
-
+    iconChange: function() {
+      
+    },
     findContacts: function() {
       this.contacts.forEach((contact) => {
         if (contact.name.toLowerCase().includes(this.search.toLowerCase())) {
@@ -138,7 +142,12 @@ const app = new Vue({
           contact.visible = false;
         }
       })
-    }
-  },
-
+    },
+    deleteMsg: function(index) {
+     this.contacts[this.counter].messages.splice(index, 1);    
+   }, 
+   dropdown: function(index) {
+    this.toggle = !this.toggle
+   }
+  }
 });
