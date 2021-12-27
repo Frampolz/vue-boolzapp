@@ -29,6 +29,7 @@
                             <i class="fas fa-circle-notch"></i>
                             <i class="fas fa-comment-alt"></i>
                             <i class="fas fa-ellipsis-v"></i>
+                            <i @click="nightmode()" class="fas fa-moon"></i>
                         </div>
                     </div>
                     <div class="notif-row">
@@ -93,7 +94,7 @@
                                     @click="dropdown(index)" 
                                     class="fas fa-chevron-down">
                                     </i>
-                                    <ul v-show='toggle'>
+                                    <ul v-if="dropdownMenu.toggle == true && dropdownMenu.index == index">
                                         <li>message info</li>
                                         <li @click="deleteMsg(index)">delete message</li>
                                     </ul>
@@ -107,9 +108,14 @@
                             <i class="far fa-smile"></i>
                         </div>
                         <input @keyup.enter="newMessages()" v-model="newMessage" type="text" placeholder="Scrivi un messaggio">
-                        <div class="mic">
+                        <div :class="(newMessage != 0) ? 'hide' : 'show' "
+                         class="mic">
                             <i class="fas fa-microphone"></i>
-                            <i class="fab fa-telegram-plane"></i>
+                        </div>
+                        <div :class="(newMessage !=0) ? 'show' : 'hide' "
+                        class="plane">
+                            <i @click="newMessages()" class="fab fa-telegram-plane"></i>
+
                         </div>
                     </div>
                 </div>

@@ -14,6 +14,7 @@ html {
     font-family:Arial, Helvetica, sans-serif;
 }
 
+
 .container {
     height: 100vh;
     background: rgb(0,150,136);
@@ -32,7 +33,6 @@ html {
     height: 90vh;
     min-width: 1200px;
     margin: auto;
-
     background-color: white;
     display: flex;
     flex-wrap: wrap;
@@ -77,7 +77,8 @@ html {
 }
 
 .icon-row .fa-comment-alt,
-.fa-paperclip {
+.fa-paperclip,
+.fa-moon {
     padding: 0 1em;
 }
 /* /user row */
@@ -223,8 +224,10 @@ html {
     position: absolute;
     top: 30px;
     right: 0;
-    background-color: wheat;
-    border-radius: 10px;
+    background-color: white;
+    box-shadow: 1px 1px 6px 3px gray;
+    z-index: 2;
+    
 }
 
 .chat-mid-row ul li p {
@@ -257,12 +260,24 @@ html {
 }
 /* /chat bot row */
 .emoji,
-.mic {
+.mic,
+.plane {
     width: 5%;
     text-align: center;
+    
 }
 
-.mic i:last-child {
-    display: none;
+.show {
+    display: block;
+}
+.hide {
+    display: none ;
 }
 /* /chat */
+
+.nightmode {
+    filter: invert(100%);
+}
+.green {
+    color: greenyellow;
+}

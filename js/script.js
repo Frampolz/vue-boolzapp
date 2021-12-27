@@ -11,11 +11,6 @@ const app = new Vue({
   el: '#app',
   data: {
     
-    toggle: false,
-    newMessage: "",
-    search:"",
-    counter: 0,
-    
     contacts: [
      {
        name: "Michele",
@@ -102,11 +97,16 @@ const app = new Vue({
        ],
      },
    ],
-    
+    counter: 0,
+    search: "",
+    newMessage: "",
+    dropdownMenu: {
+      toggle: false,
+      index: false
+    }
+
   },
   created() {
-    console.log(this.contacts[this.counter].messages);
-  
     
   },
 
@@ -147,7 +147,23 @@ const app = new Vue({
      this.contacts[this.counter].messages.splice(index, 1);    
    }, 
    dropdown: function(index) {
-    this.toggle = !this.toggle
-   }
+    
+     if (this.dropdownMenu.toggle === true && this.dropdownMenu.index === index) {
+       this.dropdownMenu.index == true
+       this.dropdownMenu.toggle == true
+    } 
+     this.dropdownMenu.toggle = !this.dropdownMenu.toggle
+     this.dropdownMenu.index = index
+   },
+   nightmode: function() {
+     const container = document.querySelector(".inner-container");
+     container.classList.toggle("nightmode")
+     const img = document.querySelectorAll("img");
+
+     img.forEach(element => {
+       element.classList.toggle("nightmode")
+     });
+     
+   },
   }
 });
