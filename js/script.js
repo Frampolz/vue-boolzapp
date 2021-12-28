@@ -146,6 +146,10 @@ const app = new Vue({
     deleteMsg: function(index) {
      this.contacts[this.counter].messages.splice(index, 1);    
    }, 
+   deleteContact: function(index) {
+     this.contacts.splice(index, 1)
+   },
+
    dropdown: function(index) {
     
      if (this.dropdownMenu.toggle === true && this.dropdownMenu.index === index) {

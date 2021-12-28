@@ -80,7 +80,12 @@
                         <div class="icon-row">
                             <i class="fas fa-search"></i>
                             <i class="fas fa-paperclip"></i>
-                            <i class="fas fa-ellipsis-v"></i>
+                            <i @click="dropdown()" class="fas fa-ellipsis-v">
+                            </i>
+                            <ul v-if="dropdownMenu.toggle == true && dropdownMenu.index == index">
+                                <li>Delete all messagges</li>
+                                <li @click="deleteContact(index)">Delete chat</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="chat-mid-row">
