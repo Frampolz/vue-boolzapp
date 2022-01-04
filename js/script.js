@@ -103,15 +103,19 @@ const app = new Vue({
     dropdownMenu: {
       toggle: false,
       index: false
-    }
+    },
+    pcAnswers: [ "ok", "si", "va bene", "ti farò sapere", "oggi non posso" ]
 
   },
   created() {
     
+    
+   
   },
 
   methods: {
     newMessages: function() {
+      const numbers = Math.floor(Math.random() * this.pcAnswers.length); 
       let newMsgSent = {
         date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
         text: this.newMessage,
@@ -119,7 +123,7 @@ const app = new Vue({
       }
       let newMsgReceived = {
         date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-        text: "ok",
+        text: this.pcAnswers[numbers],
         status: "received",
       }
       let msgArray = this.contacts[this.counter].messages;
