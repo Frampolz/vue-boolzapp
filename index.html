@@ -19,9 +19,9 @@
 
 <body>
     <div id="app">
-    <div class="container">
-            <div class="inner-container">
-                <div class="sidebar">
+        <div class="container">
+            <div v-on:="splashPage()" class="inner-container">
+                <div class="sidebar hide">
                     <div class="user-row">
                         <div class="profile-icon">
                             <img src="img/avatar_io.jpg" alt="">
@@ -70,7 +70,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="chat">
+                <div class="chat hide">
                     <div class="chat-top-row">
                         <div class="profile-icon">
                             <img :src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">

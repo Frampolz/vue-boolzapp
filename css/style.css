@@ -33,9 +33,12 @@ html {
     height: 90vh;
     min-width: 1200px;
     margin: auto;
-    background-color: white;
+    background-color: #fafafa;
     display: flex;
     flex-wrap: wrap;
+    background-image: url(https://static.ipaditalia.com/wp-content/uploads/2020/08/WhatsApp_Logo_5-770x642.png);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* siderbar */
@@ -166,7 +169,7 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow-y: hidden  ;
+    overflow-y: hidden;
 }
 .chat-top-row,
 .chat-bot-row {

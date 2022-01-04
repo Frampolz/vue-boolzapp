@@ -108,9 +108,7 @@ const app = new Vue({
 
   },
   created() {
-    
-    
-   
+
   },
 
   methods: {
@@ -135,9 +133,8 @@ const app = new Vue({
       }
       this.newMessage="";
     },
-    iconChange: function() {
-      
-    },
+
+    /* find contanct fuction */
     findContacts: function() {
       this.contacts.forEach((contact) => {
         if (contact.name.toLowerCase().includes(this.search.toLowerCase())) {
@@ -147,13 +144,15 @@ const app = new Vue({
         }
       })
     },
+    /* delete single message fuction */
     deleteMsg: function(index) {
      this.contacts[this.counter].messages.splice(index, 1);    
    }, 
+    /* delete contact fuction */
    deleteContact: function(index) {
      this.contacts.splice(index, 1)
    },
-
+   /* dropdown menu */
    dropdown: function(index) {
     
      if (this.dropdownMenu.toggle === true && this.dropdownMenu.index === index) {
@@ -163,6 +162,8 @@ const app = new Vue({
      this.dropdownMenu.toggle = !this.dropdownMenu.toggle
      this.dropdownMenu.index = index
    },
+
+   /* nightmode */
    nightmode: function() {
      const container = document.querySelector(".inner-container");
      container.classList.toggle("nightmode")
@@ -173,5 +174,14 @@ const app = new Vue({
      });
      
    },
+   
+  },
+  mounted() {
+     const sideBar = document.querySelector(".sidebar");
+     const chat = document.querySelector(".chat");
+      setTimeout(() => {
+        sideBar.classList.remove("hide")
+        chat.classList.remove("hide")
+      }, 1000);
   }
 });
